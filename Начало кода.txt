@@ -1,0 +1,32 @@
+#include <iostream>
+#include <Windows.h>
+#include <conio.h>
+#include <time.h>
+#include <fstream>
+using namespace std;
+void SetColor(WORD wAttributes)
+{
+	HANDLE hOUTPUT = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hOUTPUT, wAttributes);
+}
+void SetPos(int x, int y)
+{
+	COORD cd;
+	cd.X = x;
+	cd.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), cd);
+}
+
+
+
+int main() {
+	setlocale(LC_ALL, "rus");
+	SetPos(55, 12);
+	cout << "Hello!" << endl;
+	Sleep(3000);
+	system("cls");
+
+
+
+	system("pause");
+}
